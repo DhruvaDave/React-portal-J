@@ -1,0 +1,45 @@
+.card-container {
+  /* width: 400px; */
+  /* height: 500px; */
+  /* padding: 20px; */
+  /* border: 2px solid #e7e7e7;
+  border-radius: 4px;
+  padding: 1rem; */
+
+  /* max-width: 1200px; */
+
+  
+  /* margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  background-color: lavender; */
+
+  width: 400px;
+  display: flex;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  padding: 1rem;
+  background-color: lavender;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  flex-direction: row;
+  overflow: hidden;
+
+}
+
+
+.card-title {
+  font-size: 20px;
+  text-align: center;
+}
+
+.fighter-name-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.fighter-description {
+  text-align: center;
+}

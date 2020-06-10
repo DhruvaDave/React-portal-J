@@ -1,0 +1,51 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.search-container {
+  display: flex;
+  padding-bottom: 25px;
+  /* text-align: center; */
+}
+.search-btn{
+  margin-left: 20px;
+  /* padding: 40px; */
+}
+.list {
+  text-align: left;
+  max-width: 750px;
+  margin: auto;
+}
+
+
+
+.submit-form {
+  max-width: 300px;
+  margin: auto;
+}
+
+.edit-form {
+  max-width: 300px;
+  margin: auto;
+}
+.list {
+  text-align: left;
+  max-width: 750px;
+  margin: auto;
+}
+
+.submit-form {
+  max-width: 300px;
+  margin: auto;
+}
+
+.edit-form {
+  max-width: 300px;
+  margin: auto;
+}

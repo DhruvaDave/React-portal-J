@@ -1,0 +1,36 @@
+.result-container {
+  /* display: flex; */
+  /* background-color: dodgerblue; */
+
+  /* max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 1rem;
+
+  /* background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  flex-direction: row;
+  overflow: hidden; */
+}
+
+
+
+@media (min-width: 600px) {
+  .result-container {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (min-width: 900px) {
+  .result-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
