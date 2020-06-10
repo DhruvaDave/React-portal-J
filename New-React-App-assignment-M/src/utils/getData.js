@@ -9,7 +9,7 @@ class JobDataService {
   }
 
   getOne(id) {
-    console.log("------id---",id);
+    console.log("------id---",(`/job/${id}`));
     return http.get(`/job/${id}`);
   }
 

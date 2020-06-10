@@ -41,46 +41,46 @@ router.get("/job/findAll",(req,res) => {
 });
 
 
-// router.get("/project/:id",(req,res) => {
-//   const id = req.params.id;
+router.get("/job/:id",(req,res) => {
+  const id = req.params.id;
 
-//   Job.findById(id)
-//     .then(data => {
-//       if (!data)
-//         res.status(404).send({ message: "Not found Job with id " + id });
-//       else res.send(data);
-//     })
-//     .catch(err => {
-//       res
-//         .status(500)
-//         .send({ message: "Error retrieving Job with id=" + id });
-//     });
-// });
+  Job.findById(id)
+    .then(data => {
+      if (!data)
+        res.status(404).send({ message: "Not found Job with id " + id });
+      else res.send(data);
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .send({ message: "Error retrieving Job with id=" + id });
+    });
+});
 
 
-// router.put("/project/update/:id",(req,res) => {
-//   if (!req.body) {
-//     return res.status(400).send({
-//       message: "Data to update can not be empty!"
-//     });
-//   }
+router.put("/job/update/:id",(req,res) => {
+  if (!req.body) {
+    return res.status(400).send({
+      message: "Data to update can not be empty!"
+    });
+  }
 
-//   const id = req.params.id;
+  const id = req.params.id;
 
-//   Job.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
-//     .then(data => {
-//       if (!data) {
-//         res.status(404).send({
-//           message: `Cannot update Job with id=${id}. Maybe Job was not found!`
-//         });
-//       } else res.send({ message: "Job was updated successfully." });
-//     })
-//     .catch(err => {
-//       res.status(500).send({
-//         message: "Error updating Job with id=" + id
-//       });
-//     });
-// });
+  Job.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+    .then(data => {
+      if (!data) {
+        res.status(404).send({
+          message: `Cannot update Job with id=${id}. Maybe Job was not found!`
+        });
+      } else res.send({ message: "Job was updated successfully." });
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error updating Job with id=" + id
+      });
+    });
+});
 
 
 // router.delete("/project/delete/:id",(req,res) => {
