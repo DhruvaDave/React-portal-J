@@ -1,10 +1,9 @@
-import axios from 'axios';
-// import { serverUrl } from '../const';
 import http from "../http-common";
 
 
 class JobDataService {
   getAll() {
+    console.log("--getall----");
     return http.get("/job/findAll");
   }
 

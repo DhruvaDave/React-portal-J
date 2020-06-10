@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import JobDataService from "../utils/getData";
-import DatePicker from "react-datepicker";
- 
-import "react-datepicker/dist/react-datepicker.css";
 
 export default class Movie extends Component {
   constructor(props) {
@@ -80,28 +77,6 @@ export default class Movie extends Component {
       console.log("-------get--job");
   }
 
-  // updatePublished(status) {
-  //   var data = {
-  //     id: this.state.currentJob.id,
-  //     title: this.state.currentJob.title,
-  //     discription: this.state.currentJob.discription,
-  //     timing: this.state.currentJob.timing,
-  //     published: status
-  //   };
-  //   JobDataService.update(this.state.currentJob.id, data)
-  //   .then(response => {
-  //     this.setState(prevState => ({
-  //       currentJob: {
-  //         ...prevState.currentJob,
-  //         published: status
-  //       }
-  //     }));
-  //     console.log(response.data);
-  //   })
-  //   .catch(e => {
-  //       console.log(e);
-  //     });
-  // }
 
   updateJob() {
     JobDataService.update(

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const Job = require('../models/got.model');
+const Job = require('../models/GotModel');
 
 
 router.post("/job/create",(req,res) => {
@@ -26,7 +26,7 @@ router.post("/job/create",(req,res) => {
 
 router.get("/job/findAll",(req,res) => {
   const title = req.query.title;
-  var condition = title ? { title: { $regex: new RegExp(title), $options: "i" } } : {};
+  const condition = title ? { title: { $regex: new RegExp(title), $options: "i" } } : {};
 
   Job.find(condition)
     .then(data => {
@@ -83,42 +83,42 @@ router.put("/job/update/:id",(req,res) => {
 });
 
 
-// router.delete("/project/delete/:id",(req,res) => {
-//   const id = req.params.id;
+router.delete("/job/delete/:id",(req,res) => {
+  const id = req.params.id;
 
-//   Job.findByIdAndRemove(id)
-//     .then(data => {
-//       if (!data) {
-//         res.status(404).send({
-//           message: `Cannot delete Job with id=${id}. Maybe Job was not found!`
-//         });
-//       } else {
-//         res.send({
-//           message: "Job was deleted successfully!"
-//         });
-//       }
-//     })
-//     .catch(err => {
-//       res.status(500).send({
-//         message: "Could not delete Job with id=" + id
-//       });
-//     });
-// });
+  Job.findByIdAndRemove(id)
+    .then(data => {
+      if (!data) {
+        res.status(404).send({
+          message: `Cannot delete Job with id=${id}. Maybe Job was not found!`
+        });
+      } else {
+        res.send({
+          message: "Job was deleted successfully!"
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Could not delete Job with id=" + id
+      });
+    });
+});
 
-// router.delete("/project/deleteAll",(req,res) => {
-//   Job.deleteMany({})
-//     .then(data => {
-//       res.send({
-//         message: `${data.deletedCount} Movies were deleted successfully!`
-//       });
-//     })
-//     .catch(err => {
-//       res.status(500).send({
-//         message:
-//           err.message || "Some error occurred while removing all movies."
-//       });
-//     });
-// });
+router.delete("/job/deleteAll",(req,res) => {
+  Job.deleteMany({})
+    .then(data => {
+      res.send({
+        message: `${data.deletedCount} Movies were deleted successfully!`
+      });
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while removing all movies."
+      });
+    });
+});
 
 
 

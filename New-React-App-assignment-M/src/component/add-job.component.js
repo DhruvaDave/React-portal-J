@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import JobDataService from "../utils/getData";
-import DatePicker from "react-datepicker";
  
-import "react-datepicker/dist/react-datepicker.css";
 
 export default class JobTutorial extends Component {
   constructor(props) {
@@ -17,8 +15,6 @@ export default class JobTutorial extends Component {
       id: null,
       title: "",
       discription: "", 
-      // timing: new Date(), 
-      // published: false,
 
       submitted: false
     };
@@ -45,7 +41,7 @@ export default class JobTutorial extends Component {
   // }
 
   saveJob() {
-    var data = {
+    const data = {
       title: this.state.title,
       discription: this.state.discription,
       // timing: this.state.timing

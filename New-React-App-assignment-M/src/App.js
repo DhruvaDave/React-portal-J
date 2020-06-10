@@ -1,8 +1,4 @@
 import React, { Component } from "react";
-import { getList, getWarData } from "./utils/getData";
-// import Autocomplete from 'react-autocomplete';
-// import ResultData from './component/ResultData';
-
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
