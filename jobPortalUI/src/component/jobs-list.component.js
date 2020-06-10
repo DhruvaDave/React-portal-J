@@ -77,7 +77,6 @@ export default class jobsList extends Component {
         this.setState({
           jobs: response.data
         });
-        console.log("--response--",response.data);
       })
       .catch(e => {
         console.log(e);

@@ -23,8 +23,6 @@ export default class Movie extends Component {
   }
 
   componentDidMount() {
-    console.log("-----------Props----------",this.props);
-    console.log("-----------Props----------",this.props.match.params.id);
     this.getJob(this.props.match.params.id);
   }
 
@@ -64,7 +62,6 @@ export default class Movie extends Component {
   }
 
   getJob(id) {
-    console.log("-------get---111---",id);
     JobDataService.getOne(id)
       .then(response => {
         this.setState({
@@ -74,7 +71,6 @@ export default class Movie extends Component {
       .catch(e => {
         console.log(e);
       });
-      console.log("-------get--job");
   }
 
 

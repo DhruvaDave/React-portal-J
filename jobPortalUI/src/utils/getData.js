@@ -3,17 +3,14 @@ import http from "../http-common";
 
 class JobDataService {
   getAll() {
-    console.log("--getall----");
     return http.get("/job/findAll");
   }
 
   getOne(id) {
-    console.log("------id---",(`/job/${id}`));
     return http.get(`/job/${id}`);
   }
 
   create(data) {
-    console.log("-------------hre--------");
     return http.post("/job/create", data);
   }
 

@@ -33,18 +33,10 @@ export default class JobTutorial extends Component {
     
   }
 
-  // onChangeTiming(e) {
-  //   this.setState({
-  //     timing: e
-  //   });
-  //   console.log("------e-------",e);
-  // }
-
   saveJob() {
     const data = {
       title: this.state.title,
       discription: this.state.discription,
-      // timing: this.state.timing
     };
 
     JobDataService.create(data)
@@ -53,9 +45,6 @@ export default class JobTutorial extends Component {
           id: response.data.id,
           title: response.data.title,
           discription: response.data.discription,
-          // timing: response.data.timing,
-          // published: response.data.published,
-
           submitted: true
         });
         console.log(response.data);
@@ -70,9 +59,6 @@ export default class JobTutorial extends Component {
       id: null,
       title: "",
       discription: "",
-      // timing: new Date(),
-      // published: false,
-
       submitted: false
     });
   }
@@ -116,19 +102,6 @@ export default class JobTutorial extends Component {
                 />
               </div>
 
-
-              {/* <div className="form-group">
-                <label htmlFor="timing">timing</label>
-                <DatePicker
-                  id="timing"
-                  selected={this.state.timing}
-                  onSelect={this.onChangeTiming}
-                  showTimeSelect
-                  dateFormat="Pp"
-                  onChange={this.onChangeTiming}
-                />
-              </div> */}
-  
               <button onClick={this.saveJob} className="btn btn-success">
                 Submit
               </button>
