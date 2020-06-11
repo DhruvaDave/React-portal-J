@@ -6,6 +6,8 @@ export default class Movie extends Component {
     super(props);
     this.onChangeTitle = this.onChangeTitle.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
+    this.onChangeLocation = this.onChangeLocation.bind(this);
+
     this.onChangeTiming = this.onChangeTiming.bind(this);
     this.getJob = this.getJob.bind(this);
     this.updateJob = this.updateJob.bind(this);
@@ -16,6 +18,7 @@ export default class Movie extends Component {
         id: null,
         title: "",
         discription: "",
+        location: "",
         timing: new Date(),
       },
       message: ""
@@ -34,6 +37,19 @@ export default class Movie extends Component {
         currentJob: {
           ...prevState.currentJob,
           title: title
+        }
+      };
+    });
+  }
+
+  onChangeLocation(e) {
+    const location = e.target.value;
+
+    this.setState(function(prevState) {
+      return {
+        currentJob: {
+          ...prevState.currentJob,
+          location: location
         }
       };
     });
@@ -128,6 +144,16 @@ export default class Movie extends Component {
                   id="discription"
                   value={currentJob.discription}
                   onChange={this.onChangeDescription}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="location">location</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="location"
+                  value={currentJob.location}
+                  onChange={this.onChangeLocation}
                 />
               </div>
               {/* <div className="form-group">

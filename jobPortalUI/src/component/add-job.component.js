@@ -7,6 +7,8 @@ export default class JobTutorial extends Component {
     super(props);
     this.onChangeTitle = this.onChangeTitle.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
+    this.onChangeLocation = this.onChangeLocation.bind(this);
+
     // this.onChangeTiming = this.onChangeTiming.bind(this);
     this.saveJob = this.saveJob.bind(this);
     this.newJob = this.newJob.bind(this);
@@ -15,6 +17,7 @@ export default class JobTutorial extends Component {
       id: null,
       title: "",
       discription: "", 
+      location: "", 
 
       submitted: false
     };
@@ -23,6 +26,12 @@ export default class JobTutorial extends Component {
   onChangeTitle(e) {
     this.setState({
       title: e.target.value
+    });
+  }
+
+  onChangeLocation(e) {
+    this.setState({
+      location: e.target.value
     });
   }
 
@@ -37,6 +46,7 @@ export default class JobTutorial extends Component {
     const data = {
       title: this.state.title,
       discription: this.state.discription,
+      location: this.state.location,
     };
 
     JobDataService.create(data)
@@ -45,6 +55,7 @@ export default class JobTutorial extends Component {
           id: response.data.id,
           title: response.data.title,
           discription: response.data.discription,
+          location: response.data.location,
           submitted: true
         });
         console.log(response.data);
@@ -59,6 +70,7 @@ export default class JobTutorial extends Component {
       id: null,
       title: "",
       discription: "",
+      location: "",
       submitted: false
     });
   }
@@ -99,6 +111,19 @@ export default class JobTutorial extends Component {
                   value={this.state.discription}
                   onChange={this.onChangeDescription}
                   name="discription"
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="location">location</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="location"
+                  required
+                  value={this.state.location}
+                  onChange={this.onChangeLocation}
+                  name="location"
                 />
               </div>
 

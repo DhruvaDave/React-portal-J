@@ -5,6 +5,9 @@ const jobSchema = mongoose.Schema(
     // _id: mongoose.Schema.ObjectId,
     title: String,
     discription: String,
+    resume : JSON,
+    location:String,
+
     // timing: Date,
     
     },
